@@ -1,0 +1,35 @@
+html { height: 100% }
+
+body { height: 100%; margin: 0; padding: 0 }
+
+#map-canvas { height: 100% }
+
+#chrome_counter {
+	position: fixed;
+	bottom: 0;
+	background: #F1EDED;
+	padding: 5px;
+	border: 1px solid #919191;
+	border-bottom: 0px;
+	font-size: 12px;
+	color: #333;
+	font-family: 'Arial', Helvetica, sans-serif;
+	cursor: default;
+	z-index: 9999;
+	line-height: 1;
+	outline: 0;
+	vertical-align: baseline;
+	margin: 0;
+	-webkit-touch-callout: none; 
+	-webkit-user-select: none; 
+	user-select: none;
+}
+
+.chrome_counter_right {
+	right: 1%;
+}
+
+/* hide if in print view */
+@media print {
+	#chrome_counter {display:none;}
+}

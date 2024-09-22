@@ -1,0 +1,26 @@
+{
+  "name": "ip-request-mapper",
+  "version": "2.0.1",
+  "description": "Chrome extension to geolocate assets on a web site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.236",
+    "@types/googlemaps": "^3.43.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickduggan/ip-request-mapper.git"
+  },
+  "author": "Rick Duggan",
+  "bugs": {
+    "url": "https://github.com/rickduggan/ip-request-mapper/issues"
+  },
+  "homepage": "https://github.com/rickduggan/ip-request-mapper#readme",
+  "dependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^5.1.6"
+  }
+}
