@@ -58,10 +58,23 @@ function geoLocate(data: { hostname: string }) {
   fetch(dnsURL + data.hostname + '&type=A')
     .then(response => response.json())
     .then(dnsData => {
-      const ipAddress = dnsData.Answer?.[0]?.data; // Extract the IP from DNS response
-      if (!ipAddress) {
-        throw new Error('Failed to resolve hostname to IP');
+      if (!dnsData.Answer || dnsData.Answer.length === 0) {
+        throw new Error('No DNS answers found for hostname');
       }
+
+      // Iterate through the Answer array to find the first valid IP address
+      let ipAddress = null;
+      for (const answer of dnsData.Answer) {
+        if (answer.data && validateIpAddress(answer.data)) {  // Assuming validateIpAddress checks if it's a valid IP
+          ipAddress = answer.data;
+          break; // Exit loop once a valid IP is found
+        }
+      }
+
+      if (!ipAddress) {
+        throw new Error('Failed to resolve hostname to valid IP');
+      }
+
       // Now use the resolved IP address in geoipURL
       return fetch(geoipURL + ipAddress);
     })
@@ -72,6 +85,13 @@ function geoLocate(data: { hostname: string }) {
     })
     .catch(error => console.error('Error in geoLocate:', error));
 }
+
+// Assuming a simple IP address validation function
+function validateIpAddress(ip : string) {
+  const ipPattern = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+  return ipPattern.test(ip);
+}
+
 
 function updateMap(data: { latitude: number; longitude: number; hostname: string; ip: string }) {
   if (map) {
