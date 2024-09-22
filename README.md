@@ -16,7 +16,7 @@ Then compile the Typescript: "tsc" or "npx tsc"
 
 Then "Load Unpacked Extension" in Chrome, selecting the top level folder for the extension.
 
-Once the extension is installed, Click on the Puzzle icon in Chrome to Manage Extensions. Ensure the extension is pinned so that it can be activated. Activate the extension. A map will open in a new window. In the original window, visit any web site and you will see pin icons dropped onto the map.
+Once the extension is installed, Click on the Puzzle icon in Chrome to Manage Extensions. Ensure the extension is pinned so that it can be activated. Activate the extension by clicking on the map icon. A map will open in a new window. In the original window, visit any web site and you will see pin icons dropped onto the map.
 
 Icon courtesy of designmodo.com.
 
