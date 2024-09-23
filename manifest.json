@@ -11,7 +11,7 @@
    "key": "",
    "manifest_version": 2,
    "name": "IP Request Mapper",
-   "permissions": [ "<all_urls>", "tabs", "webRequest", "storage", "dns" ],
+   "permissions": [ "<all_urls>", "tabs", "webRequest", "storage" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
    "version": "3.0.3"
 }
