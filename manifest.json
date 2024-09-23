@@ -13,5 +13,5 @@
    "name": "IP Request Mapper",
    "permissions": [ "<all_urls>", "tabs", "webRequest", "storage" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "3.0.3"
+   "version": "3.0.4"
 }
